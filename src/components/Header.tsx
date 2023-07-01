@@ -1,24 +1,14 @@
 import { motion } from 'framer-motion'
-
-const imageVariants = {
-  initial: {
-    scale: 0.5,
-  },
-  animate: {
-    scale: 1,
-
-    transition: {
-      type: 'spring',
-      stiffness: 260,
-      duration: 0.5,
-    },
-  },
-}
+import animationVariants from '../utils/animations'
 
 function Header() {
   return (
     <div className='text-white flex flex-col items-center justify-center'>
-      <motion.div variants={imageVariants} initial='initial' animate='animate'>
+      <motion.div
+        variants={animationVariants}
+        initial='initial'
+        animate='animate'
+      >
         <img src='/pfp.png' alt='Kunaaal' className='rounded-full h-28 w-28' />
       </motion.div>
 

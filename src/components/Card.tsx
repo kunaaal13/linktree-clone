@@ -1,23 +1,9 @@
 import { motion } from 'framer-motion'
 import { Social } from '../typings'
+import animationVariants from '../utils/animations'
 
 type props = {
   social: Social
-}
-
-const cardVariants = {
-  initial: {
-    scale: 0.5,
-  },
-  animate: {
-    scale: 1,
-
-    transition: {
-      type: 'spring',
-      stiffness: 260,
-      duration: 0.5,
-    },
-  },
 }
 
 function Card({ social }: props) {
@@ -25,7 +11,7 @@ function Card({ social }: props) {
     <a href={social.url}>
       <motion.div
         key={social.id}
-        variants={cardVariants}
+        variants={animationVariants}
         initial='initial'
         animate='animate'
         className='rounded-lg overflow-hidden cursor-pointer'
